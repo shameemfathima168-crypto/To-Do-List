@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="todo-card" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR DAILY SPACE</p>
+      <h1 id="page-title">Focus List</h1>
+      <p class="subtitle">Small tasks, clear mind.</p>
+      <form id="todo-form" class="add-form">
+        <label class="sr-only" for="todo-input">New task</label>
+        <input id="todo-input" maxlength="200" placeholder="What needs your attention?" autocomplete="off" required />
+        <button type="submit">Add task</button>
+      </form>
+      <div class="summary"><span id="count">0 tasks left</span><button id="clear-completed" type="button">Clear completed</button></div>
+      <ul id="todo-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty-state">Your list is clear. Add something meaningful.</p>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
